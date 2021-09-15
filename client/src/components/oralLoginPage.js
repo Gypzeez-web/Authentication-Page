@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
 function OralLoginPage() {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   function validateForm() {
-    return email.length > 0 && password.length >= 7;
+    return username.length > 0 && password.length >= 7;
   }
 
   function handleSubmit(event) {
@@ -18,14 +18,13 @@ function OralLoginPage() {
       <form onSubmit={handleSubmit}>
         <div className="form-group mb-3">
           <input
-            type="email"
-            value={email}
+            type="text"
+            value={username}
             autoFocus
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setUsername(e.target.value)}
             className="form-control mx-auto"
-            id="Email1"
-            aria-describedby="emailHelp"
-            placeholder="Enter email"
+            id="username"
+            placeholder="Enter username"
             style={{borderRadius:20,width:500}}
           />
         </div>

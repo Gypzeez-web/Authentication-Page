@@ -1,4 +1,5 @@
 import './App.css';
+import Login from './components/facebook_component/login';
 import Header from './components/header';
 import OralLoginPage from './components/oralLoginPage';
 
@@ -7,6 +8,7 @@ function App() {
     <div className="App">
       <Header/>
       <OralLoginPage/>
+      <Login/>
     </div>
   );
 }
