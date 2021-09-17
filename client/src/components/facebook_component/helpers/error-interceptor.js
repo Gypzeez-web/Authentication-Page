@@ -1,8 +1,8 @@
 import axios from "axios";
 
-import { accountService } from "services";
+import { accountService } from "../services/accountServices";
 
-function ErrorInterceptor() {
+function errorInterceptor() {
   axios.interceptors.response.use(null, (error) => {
     const { response } = error;
     if (!response) {
@@ -18,4 +18,4 @@ function ErrorInterceptor() {
     console.error("ERROR :", errorMessage);
   });
 }
-export default ErrorInterceptor;
+export default errorInterceptor;

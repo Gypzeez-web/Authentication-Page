@@ -1,17 +1,20 @@
-import { accountService } from "services";
+import { accountService } from "../services/accountServices";
 
 const facebookAppId = process.env.AUTH_APP_FACEBOOK_APP_ID;
 
-function InitFacebookSDK() {
+function initFacebookSdk() {
   return new Promise((resolve) => {
     // wait for facebook sdk to initialize before starting the react app
-    window.fbAsyncInit = function () {
+    window.fbAsyncInit = function() {
       window.FB.init({
-        appId: facebookAppId,
-        cookie: true,
-        xfbml: true,
-        version: "v12.0",
+        appId      : facebookAppId,
+        cookie     : true,                     // Enable cookies to allow the server to access the session.
+        xfbml      : true,                     // Parse social plugins on this webpage.
+        version    : 'v12.0'           // Use this Graph API version for this call.
       });
+  
+  
+      
       // auto authenticate with the api if already logged in with facebook
       window.FB.getLoginStatus(({ authResponse }) => {
         if (authResponse) {
@@ -38,4 +41,4 @@ function InitFacebookSDK() {
   });
   
 }
-export default InitFacebookSDK;
+export default initFacebookSdk;

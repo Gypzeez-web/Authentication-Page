@@ -1,5 +1,5 @@
 import React,{useEffect} from "react";
-import {accountService} from 'services';
+import {accountService} from '../facebook_component/services/accountServices';
 
 function Login({history}){
     useEffect(()=>{

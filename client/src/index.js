@@ -1,13 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {render} from 'react-dom';
+import { Router } from 'react-router-dom';
 import App from './App';
 
+import { initFacebookSdk, jwtInterceptor, errorInterceptor, history,fakeBackEnd } from  './components/facebook_component/helpers';
 
+fakeBackEnd();
+jwtInterceptor();
+errorInterceptor();
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
+initFacebookSdk().then(startApp);
+function startApp() { 
+    render(
+        <Router history={history}>
+            <App />
+        </Router>,
+        document.getElementById('root')
+    );
+}

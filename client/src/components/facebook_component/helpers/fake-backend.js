@@ -1,13 +1,13 @@
 import axios from "axios";
 
-import { accountService } from "services";
+import { accountService } from "../services/accountServices";
 
 // array in local storage for accounts
 
 const accountsKey = "react-facebook-login-accounts";
 let accounts = JSON.parse(localStorage.getItem(accountsKey)) || [];
 
-function DummyBackEnd() {
+function fakeBackend() {
   const methods = ["get", "post", "put", "delete"];
   methods.forEach((method) => {
     axios[`original${method}`] = axios[method];
@@ -154,4 +154,4 @@ function DummyBackEnd() {
     };
   });
 }
-export default DummyBackEnd;
+export default fakeBackend;
