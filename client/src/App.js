@@ -3,6 +3,7 @@
 
 import GoogleAuthentication from "./components/google/google";
 import Header from "./components/header";
+import Verification from "./components/mobile-verificarion/verification-screen";
 //import PrivateRoute from "./components/facebook_component/navigator/privateRoute";
 //import Home from "./components/facebook_component/home/Home";
 import OralLoginPage from "./components/oralLoginPage";
@@ -15,6 +16,7 @@ function App() {
       <Header />
       <OralLoginPage/>
       <GoogleAuthentication/>
+      <Verification/>
     </div>
   );
 }
