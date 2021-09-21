@@ -1,24 +1,28 @@
+import React from "react";
+import auth from "./auth";
+import StepForm from "./components/mobile-verificarion/stepForm";
+import Home from "./components/mobile-verificarion/home";
+
 //import { Route, Switch, Redirect, useLocation } from "react-router-dom";
 //import Login from "./components/facebook_component/login";
-
-import GoogleAuthentication from "./components/google/google";
-import Header from "./components/header";
-import Verification from "./components/mobile-verificarion/verification-screen";
+//import GoogleAuthentication from "./components/google/google";
+//import Header from "./components/header";
+//import Verification from "./components/mobile-verificarion/verification-screen";
 //import PrivateRoute from "./components/facebook_component/navigator/privateRoute";
 //import Home from "./components/facebook_component/home/Home";
-import OralLoginPage from "./components/oralLoginPage";
-
+//import OralLoginPage from "./components/oralLoginPage";
 
 function App() {
   //const pathname = useLocation().pathname || "";
-  return (
+  /*return (
     <div className="App">
-      <Header />
-      <OralLoginPage/>
-      <GoogleAuthentication/>
-      <Verification/>
+      <Header />     
+      if(Auth.isAuthenticated())return <Home/>;
+      else return <StepForm/>; 
     </div>
-  );
+  );*/
+  if (auth.isAuthenticated()) return <Home />;
+  else return <StepForm />;
 }
 
 export default App;
