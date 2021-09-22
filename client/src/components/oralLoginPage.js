@@ -52,7 +52,7 @@ function OralLoginPage() {
           className="btn btn-primary  "
           disabled={!validateForm()}
         >
-          Submit
+          Login
         </button>
         <div className="form-check ">
             <h6 className="mt-3">- Or Sign In With -</h6>
